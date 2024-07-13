@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 
 const EMAILJS_USER_ID = '7-yHBsVi2LPGyU64C';
 const EMAILJS_TEMPLATE_ID = 'template_qbm1cyi';
@@ -23,7 +24,11 @@ const ContactSection = () => {
     event.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
-      alert('Please fill in all fields.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please fill in all fields.'
+      });
       return;
     }
 
@@ -31,7 +36,11 @@ const ContactSection = () => {
       .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData, EMAILJS_USER_ID)
       .then((response) => {
         console.log('Email sent:', response);
-        alert('Email successfully sent!');
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Email successfully sent!'
+        });
         setFormData({
           name: '',
           email: '',
@@ -40,7 +49,11 @@ const ContactSection = () => {
       })
       .catch((error) => {
         console.error('Email failed to send:', error);
-        alert('Failed to send email. Please try again.');
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Failed to send email. Please try again.'
+        });
       });
   };
 
