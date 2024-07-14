@@ -42,8 +42,8 @@ const ContactSection = () => {
           text: 'Email successfully sent!'
         });
         setFormData({
-          name: '',
-          email: '',
+          from_name: '',
+          from_email: '',
           message: ''
         });
       })
