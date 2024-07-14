@@ -16,7 +16,7 @@ const HomeSection = () => {
           </div>
           <div className="w-full mt-20 self-end px-4 lg:w-1/2">
             <div className="relative lg:mt-0">
-              <img className="w-64 h-64 rounded-full object-cover mx-auto my-auto hover:bg-primary duration-500" src="../img/download-removebg-preview.png" alt="" />
+              <img className="w-64 h-64 rounded-full object-cover mx-auto my-auto hover:bg-primary duration-500" src={`${process.env.PUBLIC_URL}/img/download-removebg-preview.png`} alt="" />
               {/* Jika ingin menambahkan elemen SVG latar belakang */}
               {/* <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 scale-125 -z-10">
                 <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
