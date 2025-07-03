@@ -62,9 +62,6 @@ const Header = () => {
                   <a href="#portofolio" className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Portofolio</a>
                 </li>
                 <li className="group">
-                  <a href="#blog" className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Blog</a>
-                </li>
-                <li className="group">
                   <a href="#contact" className="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
                 </li>
               </ul>
