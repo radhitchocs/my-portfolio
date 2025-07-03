@@ -12,7 +12,10 @@ const HomeSection = () => {
             </h1>
             <h2 className="font-medium text-slate-500 text-lg mb-5 lg:text-2xl typewriter" id="typewriter-text">Back End Developer</h2>
             <p className="font-medium text-secondary mb-10">I am a student currently studying in vocational high school majoring in software engineering and focuses on back end developers.</p>
-            <a href="#contact" className="text-base font-semibold bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Contact Me</a>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+              <a href="#contact" className="text-base font-semibold bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Contact Me</a>
+              <a href="/cv/cv.pdf" download className="sm:ml-4 text-base font-semibold bg-slate-500 text-white py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Download CV</a>
+            </div>
           </div>
           <div className="w-full mt-20 self-end px-4 lg:w-1/2">
             <div className="relative lg:mt-0">
