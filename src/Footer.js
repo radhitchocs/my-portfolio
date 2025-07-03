@@ -13,20 +13,6 @@ const Footer = () => {
             <p>Rungkut, Surabaya</p>
           </div>
           <div className="w-full px-4 mb-12 md:w-1/3">
-            <h3 className="font-semibold text-xl text-white mb-5">Post Categories</h3>
-            <ul className="text-slate-300">
-              <li>
-                <a href="https://www.freecodecamp.org/" target="_blank" className="inline-block text-base hover:text-primary mb-3" rel="noreferrer">Programming</a>
-              </li>
-              <li>
-                <a href="https://www.pcgamer.com/" target="_blank" className="inline-block text-base hover:text-primary mb-3" rel="noreferrer">Mechanical Keyboards</a>
-              </li>
-              <li>
-                <a href="https://www.rubiks.com/" target="_blank" className="inline-block text-base hover:text-primary mb-3" rel="noreferrer">Rubik's Cube</a>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full px-4 mb-12 md:w-1/3">
             <h3 className="font-semibold text-xl text-white mb-5">Quick Links</h3>
             <ul className="text-slate-300">
               <li>
@@ -37,9 +23,6 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#portfolio" className="inline-block text-base hover:text-primary mb-3">Portfolio</a>
-              </li>
-              <li>
-                <a href="#blog" className="inline-block text-base hover:text-primary mb-3">Blog</a>
               </li>
               <li>
                 <a href="#contact" className="inline-block text-base hover:text-primary mb-3">Contact</a>
