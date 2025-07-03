@@ -22,7 +22,7 @@ const Footer = () => {
                 <a href="#about" className="inline-block text-base hover:text-primary mb-3">About</a>
               </li>
               <li>
-                <a href="#portfolio" className="inline-block text-base hover:text-primary mb-3">Portfolio</a>
+                <a href="#portofolio" className="inline-block text-base hover:text-primary mb-3">Portfolio</a>
               </li>
               <li>
                 <a href="#contact" className="inline-block text-base hover:text-primary mb-3">Contact</a>
