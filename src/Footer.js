@@ -71,7 +71,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="font-medium text-xs text-slate-500 text-center">
-              &copy; Copyright <a href="https://www.instagram.com/radhitchocs" target="_blank" rel="noopener noreferrer" className="font-bold text-primary">@radhitchocs</a> by <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="font-bold text-sky-500">Tailwind CSS</a> </p>          </div>
+              &copy; Copyright <a href="https://www.instagram.com/radhitchocs" target="_blank" rel="noopener noreferrer" className="font-bold text-primary">@radhitchocs</a> </p> </div>
         </div>
     </footer>
   );
