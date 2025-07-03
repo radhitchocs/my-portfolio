@@ -1,6 +1,56 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const HomeSection = () => {
+  const titles = ['Back End Developer', 'Full Stack Developer'];
+  const [currentTitle, setCurrentTitle] = useState(0);
+  const [displayText, setDisplayText] = useState(titles[0]);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isTransitioning) {
+        setIsTransitioning(true);
+        const oldText = titles[currentTitle];
+        const newIndex = (currentTitle + 1) % titles.length;
+        const newText = titles[newIndex];
+        
+        // Animasi menghilangkan teks lama karakter per karakter
+        const eraseText = () => {
+          let currentLength = oldText.length;
+          const eraseInterval = setInterval(() => {
+            if (currentLength > 0) {
+              setDisplayText(oldText.substring(0, currentLength - 1));
+              currentLength--;
+            } else {
+              clearInterval(eraseInterval);
+              // Setelah selesai menghapus, mulai mengetik teks baru
+              typeNewText();
+            }
+          }, 50);
+        };
+
+        // Animasi mengetik teks baru karakter per karakter
+        const typeNewText = () => {
+          let currentLength = 0;
+          const typeInterval = setInterval(() => {
+            if (currentLength < newText.length) {
+              setDisplayText(newText.substring(0, currentLength + 1));
+              currentLength++;
+            } else {
+              clearInterval(typeInterval);
+              setCurrentTitle(newIndex);
+              setIsTransitioning(false);
+            }
+          }, 80);
+        };
+
+        eraseText();
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [currentTitle, isTransitioning]);
+
   return (
     <section id="home" className="pt-36 pb-32">
       <div className="container mx-auto">
@@ -10,7 +60,10 @@ const HomeSection = () => {
               Hi Everyone!! <span className="wave">👋</span> I am
               <span className="block font-bold text-dark text-4xl mt-1 lg:text-5xl">Radhit Pribadi Tegar</span>
             </h1>
-            <h2 className="font-medium text-slate-500 text-lg mb-5 lg:text-2xl typewriter" id="typewriter-text">Back End Developer</h2>
+            <h2 className="font-medium text-slate-500 text-lg mb-5 lg:text-2xl typewriter" id="typewriter-text">
+              {displayText}
+              <span className="animate-pulse">|</span>
+            </h2>
             <p className="font-medium text-secondary mb-10">I am a student currently studying in vocational high school majoring in software engineering and focuses on back end developers.</p>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <a href="#contact" className="text-base font-semibold bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Contact Me</a>
@@ -20,12 +73,6 @@ const HomeSection = () => {
           <div className="w-full mt-20 self-end px-4 lg:w-1/2">
             <div className="relative lg:mt-0">
               <img className="w-64 h-64 rounded-full object-cover mx-auto my-auto hover:bg-primary duration-500" src={`${process.env.PUBLIC_URL}/img/download-removebg-preview.png`} alt="" />
-              {/* Jika ingin menambahkan elemen SVG latar belakang */}
-              {/* <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 scale-125 -z-10">
-                <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#14B8A6" d="M52.1,-53.4C67.2,-36.9,79,-18.5,78.2,-0.8C77.4,16.8,63.8,33.5,48.7,48.6C33.5,63.8,16.8,77.3,-0.7,78C-18.2,78.7,-36.4,66.7,-48.6,51.6C-60.7,36.4,-66.8,18.2,-66,0.9C-65.1,-16.5,-57.3,-33,-45.2,-49.5C-33,-66,-16.5,-82.4,1,-83.4C18.5,-84.4,36.9,-69.9,52.1,-53.4Z" transform="translate(100 100)" />
-                </svg>
-              </span> */}
             </div>
           </div>
         </div>
