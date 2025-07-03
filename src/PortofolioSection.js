@@ -12,6 +12,13 @@ const PortfolioSection = () => {
           </div>
         </div>
         <div className="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
+          <div className="mb-12 p-4 md:w-1/2">
+            <div className="rounded-md shadow-md overflow-hidden">
+              <img src={`${process.env.PUBLIC_URL}/img/lequiz.png`} alt="LeQuiz App" className="w-full" />
+            </div>
+            <h3 className="font-semibold text-xl text-dark mt-5 mb-3 hover:text-primary">LeQuiz App</h3>
+            <p className="font-medium text-base text-secondary">LeQuiz is an interactive quiz application for web and mobile platforms, powered by a GraphQL API. It offers a classroom-like experience, enabling users to participate in real-time quizzes, track scores, and engage in dynamic learning sessions.</p>
+          </div>
           <a href="https://radhitchocs.github.io/smartti.github.io/" target="_blank" rel="noopener noreferrer" className="block mb-12 p-4 md:w-1/2">
             <div className="rounded-md shadow-md overflow-hidden">
               <img src={`${process.env.PUBLIC_URL}/img/websitesmartti.jpeg`} alt="First Website" className="w-full" />
