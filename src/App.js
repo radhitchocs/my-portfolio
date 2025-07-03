@@ -38,7 +38,7 @@ function App() {
       <HomeSection />
       <AboutSection />
       <PortfolioSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <ContactSection />
       <Footer />
       {/* Komponen lain akan ditempatkan di sini */}

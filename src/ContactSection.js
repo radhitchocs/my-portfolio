@@ -33,7 +33,11 @@ const ContactSection = () => {
     }
 
     emailjs
-      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData, EMAILJS_USER_ID)
+      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message
+      }, EMAILJS_USER_ID)
       .then((response) => {
         console.log('Email sent:', response);
         Swal.fire({
@@ -42,8 +46,8 @@ const ContactSection = () => {
           text: 'Email successfully sent!'
         });
         setFormData({
-          from_name: '',
-          from_email: '',
+          name: '',
+          email: '',
           message: ''
         });
       })
